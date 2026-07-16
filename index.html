@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Raid Sentinel | Screen OCR Alerts for Raid Logs</title>
+    <title>Raid Sentinel | Discord Raid Alerts for Survival Games</title>
     <meta
       name="description"
-      content="Raid Sentinel is a Windows desktop OCR tool that monitors a selected screen region and sends raid/log keyword alerts to Discord without memory injection or game modification."
+      content="Raid Sentinel is a Windows raid alert app that reads visible game log text and sends important survival-game alerts to Discord."
     >
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="styles.css">
@@ -14,129 +14,141 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Raid Sentinel home">
-        <span class="brand-mark">RS</span>
+        <span class="brand-mark" aria-hidden="true"></span>
         <span>Raid Sentinel</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#how">How it works</a>
+        <a href="#setup">Setup</a>
         <a href="#demo">Demo</a>
         <a href="#pricing">Pricing</a>
-        <a href="#safety">Safety</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <a class="nav-cta" href="#pricing">View plans</a>
+      <a class="nav-cta" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Start subscription</a>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <h1>Raid Sentinel</h1>
-          <p class="hero-lede">Screen OCR alerts for raid and game log messages.</p>
-          <p class="hero-text">
-            Monitor a selected region of your Windows screen, read log text locally with OCR,
-            and send matching raid alerts to the Discord channel you choose.
+          <p class="eyebrow">Windows app for Discord raid alerts</p>
+          <h1>Your tribe's alarm system.</h1>
+          <p class="hero-lede">
+            Raid Sentinel watches your selected game window, reads important log text, and sends clean alerts to Discord.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Get Raid Sentinel Pro</a>
-            <a class="button secondary" href="#demo">Watch demo</a>
+            <a class="button secondary" href="#setup">See setup steps</a>
           </div>
           <ul class="trust-list" aria-label="Product highlights">
-            <li>Local OCR processing</li>
+            <li>No game memory reading</li>
+            <li>No anti-cheat bypass</li>
             <li>Discord webhook alerts</li>
-            <li>No memory injection or game modification</li>
+            <li>ARK, Rust, Conan, DayZ, and custom games</li>
           </ul>
         </div>
 
-        <div class="app-preview" aria-label="Raid Sentinel app preview">
-          <div class="window-bar">
-            <span>Raid Sentinel</span>
-            <span class="window-controls">-  □  ×</span>
+        <aside class="command-card" aria-label="Raid Sentinel dashboard preview">
+          <div class="command-top">
+            <div>
+              <span class="mini-label">Raid Sentinel Pro</span>
+              <strong>Monitoring active</strong>
+            </div>
+            <span class="live-pill"><span></span> RUNNING</span>
           </div>
+          <div class="scan-line" aria-hidden="true"></div>
           <div class="preview-grid">
-            <aside class="preview-panel">
-              <div class="status-card">
-                <span class="pulse"></span>
-                <div>
-                  <strong>Monitoring active</strong>
-                  <span>Next capture in 2.0s</span>
-                </div>
-              </div>
-              <div class="preview-field">
-                <span>Region</span>
-                <strong>Custom screen area</strong>
-                <small>X: 1260 · Y: 320 · W: 860 · H: 420</small>
-              </div>
-              <div class="preview-field">
-                <span>Discord webhook</span>
-                <strong>Connected</strong>
-                <small>Alerts post to your selected channel</small>
-              </div>
-            </aside>
-
-            <section class="preview-main">
-              <div class="keyword-row" aria-label="Configured alert keywords">
-                <span>destroyed</span>
-                <span>demolished</span>
-                <span>killed</span>
-                <span>raided</span>
-                <span>claimed</span>
-              </div>
-              <div class="alert-list">
-                <div class="alert-row">
-                  <span class="dot"></span>
-                  <strong>Enemy base wall destroyed by [ZOG] Alpha</strong>
-                  <time>1:27:43 PM</time>
-                </div>
-                <div class="alert-row">
-                  <span class="dot"></span>
-                  <strong>Supply depot raided by [TRM] Titan</strong>
-                  <time>1:27:37 PM</time>
-                </div>
-                <div class="alert-row">
-                  <span class="dot"></span>
-                  <strong>Outpost claimed by [ZOG] Alpha</strong>
-                  <time>1:27:21 PM</time>
-                </div>
-                <div class="alert-row">
-                  <span class="dot"></span>
-                  <strong>Player killed near perimeter</strong>
-                  <time>1:26:41 PM</time>
-                </div>
-              </div>
-            </section>
+            <div class="preview-panel">
+              <span class="panel-icon">!</span>
+              <span class="mini-label">Active raid</span>
+              <strong>Structure damage</strong>
+              <p>Your Metal Wall was destroyed.</p>
+            </div>
+            <div class="preview-panel">
+              <span class="panel-icon skull">x</span>
+              <span class="mini-label">Creature loss</span>
+              <strong>Starved to death</strong>
+              <p>Your Cosmo starved to death.</p>
+            </div>
+            <div class="preview-panel wide">
+              <span class="mini-label">Discord delivery</span>
+              <strong>#raid-sentinel-alerts connected</strong>
+              <p>Critical alerts can mention @here or @everyone. Lower-risk alerts can stay quiet.</p>
+            </div>
           </div>
+          <div class="bottom-status">
+            <span class="pulse-line" aria-hidden="true"></span>
+            <span>Current game day, text quality, and source status stay visible while monitoring.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="how" class="section split-section">
+        <div>
+          <p class="eyebrow">What it does</p>
+          <h2>Reads the screen you choose and alerts the Discord channel you choose.</h2>
+        </div>
+        <div class="feature-list">
+          <article>
+            <h3>Window or log monitoring</h3>
+            <p>Pick a game window like a Discord stream picker, or use a server log file when you have direct log access.</p>
+          </article>
+          <article>
+            <h3>Game presets plus custom phrases</h3>
+            <p>Start from presets for survival games, then add your own custom alert text for your server or tribe.</p>
+          </article>
+          <article>
+            <h3>Duplicate and old-history protection</h3>
+            <p>Raid Sentinel starts from the current point, suppresses old scrollback, and avoids repeating the same visible log line.</p>
+          </article>
         </div>
       </section>
 
-      <section id="how" class="section how-section">
+      <section id="setup" class="section setup-section">
         <div class="section-heading">
-          <h2>How it works</h2>
-          <p>Raid Sentinel is built for clear setup and transparent fulfillment.</p>
+          <p class="eyebrow">Customer flow</p>
+          <h2>Subscribe, install, activate, monitor.</h2>
+          <p>Checkout and license delivery are handled through Gumroad. Raid Sentinel validates the license inside the app.</p>
         </div>
-        <div class="step-grid">
+        <div class="steps">
           <article>
-            <span class="step-number">1</span>
-            <h3>Choose the game window</h3>
-            <p>Pick the game window and Raid Sentinel follows it when it moves. Manual region selection is available as a backup.</p>
+            <span>1</span>
+            <h3>Start subscription</h3>
+            <p>Buy Raid Sentinel Pro through Gumroad. The purchase page gives you the app download and license key.</p>
           </article>
           <article>
-            <span class="step-number">2</span>
-            <h3>Run local OCR</h3>
-            <p>The app captures screenshots on a set interval and reads visible text on your PC.</p>
+            <span>2</span>
+            <h3>Install on Windows</h3>
+            <p>Extract the ZIP or run the installer, then open Raid Sentinel like a normal desktop app.</p>
           </article>
           <article>
-            <span class="step-number">3</span>
-            <h3>Send Discord alerts</h3>
-            <p>Matching lines are posted to your configured Discord webhook with duplicate suppression.</p>
+            <span>3</span>
+            <h3>Activate license</h3>
+            <p>Paste the Gumroad license key. Monitoring stays locked until an active license is validated.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Connect Discord</h3>
+            <p>Create a Discord webhook in the alert channel, paste it into Raid Sentinel, and send a test alert.</p>
+          </article>
+          <article>
+            <span>5</span>
+            <h3>Choose game source</h3>
+            <p>Select the game preset, choose the game window or server log file, and follow the setup coach.</p>
+          </article>
+          <article>
+            <span>6</span>
+            <h3>Start monitoring</h3>
+            <p>Raid Sentinel begins from the current point so old visible history does not spam your Discord.</p>
           </article>
         </div>
       </section>
 
       <section id="demo" class="section demo-section">
         <div class="demo-copy">
-          <h2>Product demo</h2>
+          <p class="eyebrow">Demo</p>
+          <h2>See the alert flow before buying.</h2>
           <p>
-            The demo shows choosing a game/log area, running OCR, detecting keywords such as
-            destroyed and raided, and receiving the resulting Discord alert.
+            The demo shows choosing a game/log area, running text reading, detecting raid phrases, and receiving the resulting Discord alert.
           </p>
           <a class="button secondary" href="assets/raid-sentinel-demo.mp4">Open demo video</a>
         </div>
@@ -149,80 +161,80 @@
       </section>
 
       <section id="pricing" class="section pricing-section">
-        <div class="section-heading">
-          <h2>Pricing plans</h2>
-          <p>Monthly subscriptions with a 7-day trial. License keys are delivered after checkout.</p>
+        <div class="pricing-copy">
+          <p class="eyebrow">Subscription</p>
+          <h2>Raid Sentinel Pro</h2>
+          <p>
+            Built for active tribes that need a simple Discord alarm system without game modification.
+          </p>
+          <a class="button primary" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Subscribe for $19/month</a>
         </div>
-        <div class="pricing-grid">
-          <article class="price-card">
-            <h3>Scout</h3>
-            <p class="price">$9<span>/mo</span></p>
-            <p>Self-serve alerts for solo players and small groups.</p>
-            <ul>
-              <li>Core OCR monitor</li>
-              <li>Configurable keywords</li>
-              <li>One Discord webhook destination</li>
-              <li>Documentation-based setup</li>
-            </ul>
-            <a class="price-action secondary" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Start with Pro</a>
-          </article>
-          <article class="price-card featured">
-            <h3>Pro</h3>
-            <p class="price">$19<span>/mo</span></p>
-            <p>Recommended for active teams and server owners.</p>
-            <ul>
-              <li>Everything in Scout</li>
-              <li>Priority feature updates</li>
-              <li>Email support for license and configuration issues</li>
-              <li>Multi-profile configuration roadmap</li>
-            </ul>
-            <a class="price-action primary" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Start 7-day trial</a>
-          </article>
-          <article class="price-card">
-            <h3>Server Ops</h3>
-            <p class="price">$39<span>/mo</span></p>
-            <p>For admin teams and larger communities.</p>
-            <ul>
-              <li>Everything in Pro</li>
-              <li>Priority setup guidance</li>
-              <li>Multi-channel routing roadmap</li>
-            </ul>
-            <a class="price-action secondary" href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Start with Pro</a>
-          </article>
-        </div>
+        <article class="price-card">
+          <div class="price-row">
+            <span>$19</span>
+            <small>per month</small>
+          </div>
+          <ul>
+            <li>Windows desktop app</li>
+            <li>License key activation</li>
+            <li>Discord webhook alerts</li>
+            <li>ARK, Rust, Conan, DayZ, Minecraft server logs, 7 Days to Die, Palworld, and custom presets</li>
+            <li>Alert ping controls for @here, @everyone, or quiet alerts</li>
+            <li>Support for license, webhook, and setup issues</li>
+          </ul>
+        </article>
       </section>
 
-      <section id="safety" class="section safety-section">
-        <div>
-          <h2>Screen capture only</h2>
+      <section class="section proof-section">
+        <article>
+          <h2>Designed to stay safe.</h2>
           <p>
-            Raid Sentinel only reads pixels from the selected screen region. It does not inject
-            into games, modify game files, inspect game memory, bypass anti-cheat systems, or
-            automate gameplay.
+            Raid Sentinel reads pixels from a selected screen/window or lines from a log file. It does not inject into games,
+            edit game files, inspect game memory, bypass anti-cheat, or automate gameplay.
           </p>
+        </article>
+        <article>
+          <h2>Designed to stay readable.</h2>
+          <p>
+            Alerts are cleaned before posting to Discord, categorized by alert type, and can use different ping behavior for
+            active raid damage, creature deaths, ownership changes, and lower-risk decay messages.
+          </p>
+        </article>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions before buying.</h2>
         </div>
-        <div>
-          <h2>Support scope</h2>
-          <p>
-            Scout is self-serve with setup documentation. Pro includes email help for license
-            activation and configuration issues. Server Ops includes priority setup guidance.
-            Subscriptions include a 7-day trial before the first paid charge.
-          </p>
-        </div>
-        <div>
-          <h2>Windows note</h2>
-          <p>
-            Windows may show an unknown-publisher or SmartScreen warning because Raid Sentinel is
-            a new independent Windows app and is not code-signed yet. Only download it from your
-            Gumroad purchase page or the official Raid Sentinel page.
-          </p>
+        <div class="faq-grid">
+          <article>
+            <h3>Do I get a license key?</h3>
+            <p>Yes. Gumroad provides the license key after purchase. Paste it into Raid Sentinel to unlock monitoring.</p>
+          </article>
+          <article>
+            <h3>Does it work if the game is minimized?</h3>
+            <p>Screen reading works best with the selected game window open and readable. Server log mode is the better option when you can access server logs.</p>
+          </article>
+          <article>
+            <h3>Can I cancel?</h3>
+            <p>Subscription and billing are managed through Gumroad. If access is canceled, refunded, or disabled, the app can block monitoring after validation.</p>
+          </article>
+          <article>
+            <h3>What do I need?</h3>
+            <p>A Windows PC, the game/log source you want to monitor, and a Discord webhook URL for the channel that should receive alerts.</p>
+          </article>
+          <article class="wide">
+            <h3>Why might Windows warn me?</h3>
+            <p>Raid Sentinel is a new independent Windows app and is not code-signed yet. Only download it from your Gumroad purchase page or this official Raid Sentinel page.</p>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <span>Raid Sentinel</span>
-      <span>Windows desktop OCR alerts for Discord.</span>
+      <a href="https://octoberjohnny.gumroad.com/l/raid-sentinel-pro">Buy Raid Sentinel Pro</a>
     </footer>
   </body>
 </html>
