@@ -106,8 +106,25 @@
       <section id="setup" class="section setup-section">
         <div class="section-heading">
           <p class="eyebrow">Customer flow</p>
-          <h2>Subscribe, install, activate, monitor.</h2>
-          <p>Checkout and license delivery are handled through Gumroad. Raid Sentinel validates the license inside the app.</p>
+          <h2>Simple setup, no guessing.</h2>
+          <p>Checkout and license delivery are handled through Gumroad. The app walks you through the same steps shown here.</p>
+        </div>
+        <div class="setup-overview" aria-label="What you need before starting">
+          <article>
+            <span class="setup-icon">1</span>
+            <strong>Windows PC</strong>
+            <p>Download the ZIP from Gumroad, extract it, and open <b>Raid Sentinel.exe</b>.</p>
+          </article>
+          <article>
+            <span class="setup-icon">2</span>
+            <strong>License key</strong>
+            <p>Gumroad shows your key after purchase and emails it to you. Paste it into the app.</p>
+          </article>
+          <article>
+            <span class="setup-icon">3</span>
+            <strong>Discord webhook</strong>
+            <p>Create one in the Discord channel where you want raid alerts to appear.</p>
+          </article>
         </div>
         <div class="steps">
           <article>
@@ -128,7 +145,7 @@
           <article>
             <span>4</span>
             <h3>Connect Discord</h3>
-            <p>Create a Discord webhook in the alert channel, paste it into Raid Sentinel, and send a test alert.</p>
+            <p>Create a Discord webhook in the exact channel that should receive alerts, paste it into Raid Sentinel, and send a test alert.</p>
           </article>
           <article>
             <span>5</span>
@@ -140,6 +157,25 @@
             <h3>Start monitoring</h3>
             <p>Raid Sentinel begins from the current point so old visible history does not spam your Discord.</p>
           </article>
+        </div>
+        <div class="webhook-guide" aria-label="Discord webhook setup steps">
+          <div>
+            <p class="eyebrow">Discord webhook</p>
+            <h3>Where do I get the webhook URL?</h3>
+            <p>
+              A webhook is Discord's private posting link for one channel. Raid Sentinel uses it to send alerts to that channel.
+            </p>
+          </div>
+          <ol>
+            <li>Open Discord and go to the channel that should receive raid alerts.</li>
+            <li>Click the channel settings gear, then open <b>Integrations</b>.</li>
+            <li>Open <b>Webhooks</b>, create a webhook, and name it <b>Raid Sentinel</b>.</li>
+            <li>Click <b>Copy Webhook URL</b>.</li>
+            <li>Paste that URL into Raid Sentinel and click <b>Send Test Alert</b>.</li>
+          </ol>
+          <p class="webhook-note">
+            The webhook URL should start with <b>https://discord.com/api/webhooks/</b>. A Discord invite link will not work.
+          </p>
         </div>
       </section>
 
