@@ -1,0 +1,30 @@
+{
+  "name": "raidsentinel-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketing and download site for the Raid Sentinel Windows app.",
+  "scripts": {
+    "test": "node --test",
+    "test:manifest": "node --test test/manifest.test.js",
+    "test:links": "node --test test/links.test.js",
+    "test:html": "node --test test/html.test.js",
+    "test:structure": "node --test test/structure.test.js",
+    "check:external-links": "node scripts/check-external-links.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desmadrestudio/RaidSentinel.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desmadrestudio/RaidSentinel/issues"
+  },
+  "homepage": "https://github.com/desmadrestudio/RaidSentinel#readme",
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "html-validate": "^9.7.1",
+    "node-html-parser": "^6.1.13"
+  }
+}

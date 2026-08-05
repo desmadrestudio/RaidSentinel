@@ -1,0 +1,20 @@
+name: External link check
+
+# Non-blocking, scheduled reachability check for third-party URLs (Gumroad
+# checkout, download/manifest URLs). Runs on a schedule and on demand so a
+# transient outage never fails an unrelated code push.
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays at 13:00 UTC
+  workflow_dispatch:
+
+jobs:
+  external-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check external links
+        run: node scripts/check-external-links.mjs
