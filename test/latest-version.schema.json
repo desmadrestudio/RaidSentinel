@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Raid Sentinel version manifest",
+  "description": "Contract for latest-version.json, fetched by the installed desktop app to check for updates.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "latest_version",
+    "download_url",
+    "direct_download_url",
+    "message"
+  ],
+  "properties": {
+    "latest_version": {
+      "type": "string",
+      "description": "Semantic version of the latest published build.",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "download_url": {
+      "type": "string",
+      "description": "Public page where customers download/purchase the app.",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "direct_download_url": {
+      "type": "string",
+      "description": "Optional direct-download URL. May be an empty string when downloads are gated behind the purchase page.",
+      "anyOf": [
+        { "const": "" },
+        { "format": "uri", "pattern": "^https://" }
+      ]
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable update message surfaced by the app.",
+      "minLength": 1
+    }
+  }
+}
